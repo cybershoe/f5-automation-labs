@@ -1,14 +1,15 @@
-Module 3: Programmatic Control of Web Application Firewall Services
-===================================================================
+Module 3: Continuous Integration / Continuous Delivery for SecdevOps
+=====================================================================
 
-* Provision ASM module on BIG-IP 
-* Interact with ASM related REST endpoints on a BIG-IP
-* Create and modify an ASM policy
-* Apply the ASM policy to a virtual server
+In this module we will practice some of the below concepts:
+ - Breaking down the silos, enable dev to deploy securely with minimum friction
+ - Introduce security as early on in the dev chain as possible
+ - Automated security tests
+ - Roles of SecOps and dev in our lab model and deploy an app to prod with WAF protection.
 
 .. toctree::
    :maxdepth: 1
    :glob:
 
+   initial-setup
    lab*
-   

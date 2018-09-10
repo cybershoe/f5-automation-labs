@@ -14,6 +14,10 @@ This class covers the following topics:
 - Building CI/CD Pipelines with Jenkins
 - Team Collaboration with Automated Slack Notifications
 
+The entire class will be run from within the F5 Lab Created environment, for
+access to the lab please ask your instructor, or continue with the self-paced
+labs from f5.com/supernetops.
+
 Expected time to complete: **3 hours**
 
 .. toctree::

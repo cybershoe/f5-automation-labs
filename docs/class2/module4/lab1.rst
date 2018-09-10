@@ -17,11 +17,10 @@ will show you just one way one could be utilized.
 Task 1 - Locating the Jenkins files and how they are setup
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-#. Return to or open a new session to the ``super-netops-container``, user credentials are ``snops`` and ``default``
 
-#. During the installation of the f5-super-netops-container there were several github repositories cloned, all of which are mapped to the ``/home/snops/`` directory. Lets make sure the Jekins files were mapped correctly.
+#. Lets make sure the Jekins files were mapped correctly.
 
-   Execute: ``cd ~/f5-automation-labs/jenkins`` to access our folder containing the Jenkins Pipeline Files
+   Execute: ``cd /home/snops/f5-automation-labs/jenkins/`` to access our folder containing the Jenkins Pipeline Files
 
 #. The Jenkins files are located alongside the f5-newman-wrapper files we've used in the previous labs, setup this way was for ease of learning. You may place tools in different structures in your environment.
 
@@ -38,7 +37,7 @@ Task 1 - Locating the Jenkins files and how they are setup
           |  |      Jenkinsfile3
           |  |      Jenkinsfile4
 
-#. Lets review the first Jenkins file, from the current folder structure execute ``cat Jenkinsfile1-2``
+#. Lets review the first Jenkins file, from /home/snops/f5-automation-labs/jenkins/f5-newman-build, execute ``cat Jenkinsfile1-2``
 
    File output:
 
@@ -102,14 +101,14 @@ Our installation also has some Slack calls. Which we will setup next.
 Task 2 - Accessing Jenkins and Installing the Slack-Notifier Plug-in
 ^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^^
 
-Slack is a ChatOps toolkit, think of Skype, Teams, Messenger, or IIRC! Except Slack also has the ability to take in
-bots. slackbots are used to interact with services, they might query for something when asked, or
+Slack is a ChatOps toolkit, similar to Skype, Teams, Messenger, or IIRC! Except Slack also has the ability to take in
+bots. Slackbots are used to interact with services. They might query for something when asked, or
 give you information when they notice something. In our case our Jenkins Pipeline file will use Slack
-to notify all of us when an action happens, collaborative teamwork.
+to notify all of us when an action happens, enabling collaborative teamwork.
 
 .. NOTE:: In the Jenkins Files, the ``message`` piece is sent to the Slack channel, if you would like to modify your messages for our lab **change the text!**
 
-#. Access Jenkins via Chrome, there is already a bookmark ``Jenkins`` created on your behalf , the user credentials are ``admin\default``.
+#. Access Jenkins via Chrome, open a new tab to  ``http://localhost:10000``, the user credentials are ``admin\default``.
 
    |lab-1-1|
 
@@ -117,11 +116,11 @@ to notify all of us when an action happens, collaborative teamwork.
 
    |lab-1-2|
 
-#. Click on Manage Jenkins
+#. Click on Manage Jenkins and select ``Go to plugin manager``
 
    |lab-1-3|
 
-#. On the Manage Jenkins tab Select ``Available`` then filter on ``slack``, once the filter is complete choose ``Slack Notification Plugin`` and execute ``Install without Restart``
+#. From the Plugin Manager page, select ``Available`` then filter on ``slack``, once the filter is complete choose ``Slack Notification`` and execute ``Install without Restart``
 
    |lab-1-4|
 
