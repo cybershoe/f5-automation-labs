@@ -28,26 +28,12 @@ Task 1 - Create consolidated playbook
         environment: "{{ bigip_env }}"
 
         tasks:
-          - name: Adjust virtual server
-            bigip_virtual_server:
-              name: "{{ vsname }}"
-              destination: "{{ vsip }}"
-              port: "{{ vsport }}"
-              description: "Web App"
-              snat: "Automap"
-              all_profiles:
-                - "tcp-lan-optimized"
-                - "clientssl"
-                - "http"
-                - "analytics"
-              state: "{{ state }}"
-
           - name: Adjust a VS
             bigip_virtual_server:
               name: "{{ vs_name }}"
               destination: "{{ vs_ip }}"
               port: "{{ vs_port }}"
-              snat: "{{ vs_snat }}"
+              snat: "automap"
               all_profiles:
                 - "tcp-lan-optimized"
                 - "http"
@@ -96,14 +82,14 @@ Task 1 - Create consolidated playbook
 
 #. Verify results in BIG-IP GUI.
 
-   .. HINT:: You should see app3_vs deployed with 2 pool members.  App should
+   .. HINT:: You should see app2_vs deployed with 2 pool members.  App should
       be accessible on http://10.1.10.30.
 
 #. Run this playbook to teardown app.
 
    - Type ``ansible-playbook -e @creds.yaml --ask-vault-pass playbooks/appseed.yaml -e state="absent"``
 
-#. Verify that app3_vs, pool and nodes should be deleted in BIG-IP GUI.
+#. Verify that app2_vs, pool and nodes should be deleted in BIG-IP GUI.
 
    .. NOTE:: This playbook leverages a config seed file in 
       ``vars/appseedinfo.yaml``.  Simply modify this file to deploy a new
